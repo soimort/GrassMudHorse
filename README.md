@@ -27,10 +27,10 @@ disco.
 
 <table>
   <tr>
-    <th>Command Parameters</th> <th>Meaning</th>
+    <th>Command</th> <th>Parameters</th> <th>Meaning</th>
   </tr>
   <tr>
-    <td>[Tab][Tab][Space]</td>  <td>Randomly permute the order of all values on the stack.</td>
+    <td>[Tab][Tab][Space]</td> <td></td> <td>Randomly permute the order of all values on the stack.</td>
   </tr>
 </table>
 
