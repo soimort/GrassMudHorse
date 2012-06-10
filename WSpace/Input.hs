@@ -13,7 +13,10 @@ Strings are sequences of binary characters, terminated by C.
 We have:
 
 * Stack instructions (Preceded by A)
-     Push (Integer)    A
+     Push n        A
+     Copy nth      BA
+     Shuffle       BBA
+     Slide n       BC
      Dup           CA
      Swap          CB
      Discard       CC
@@ -67,6 +70,7 @@ parse (A:A:xs) = let (num,rest) = parseNumber xs in
 parse (A:C:A:xs) = Dup:(parse xs)
 parse (A:B:A:xs) = let (num,rest) = parseNumber xs in
 		   (Ref num):(parse rest)
+parse (A:B:B:A:xs) = Shuffle:(parse xs)
 parse (A:B:C:xs) = let (num,rest) = parseNumber xs in
 		   (Slide num):(parse rest)
 parse (A:C:B:xs) = Swap:(parse xs)

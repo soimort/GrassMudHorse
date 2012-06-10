@@ -1,6 +1,8 @@
 module VM where
 
+import Array
 import IO
+import System.Random
 
 {- Stack machine for running whitespace programs -}
 
@@ -8,6 +10,7 @@ data Instruction =
        Push Integer
      | Dup
      | Ref Int
+     | Shuffle
      | Slide Int
      | Swap
      | Discard
@@ -61,6 +64,9 @@ doInstr (VM prog (Stack (n:stack)) cs heap pc) Dup
     = vm (VM prog (Stack (n:n:stack)) cs heap pc)
 doInstr (VM prog (Stack (stack)) cs heap pc) (Ref i)
     = vm (VM prog (Stack ((stack!!i):stack)) cs heap pc)
+doInstr (VM prog (Stack stack) cs heap pc) Shuffle
+    = do shuffled <- shuffle stack
+	 vm (VM prog (Stack shuffled) cs heap pc)
 doInstr (VM prog (Stack (n:stack)) cs heap pc) (Slide i)
     = vm (VM prog (Stack (n:(drop i stack))) cs heap pc)
 doInstr (VM prog (Stack (n:m:stack)) cs heap pc) Swap
@@ -143,3 +149,18 @@ store x 0 [] = return (x:[])
 store x n [] = do hp <- store x (n-1) [] 
 		  return (0:hp)
 
+-- Shuffling the stack
+
+shuffle :: [Integer] -> IO [Integer]
+shuffle nums = do shuffled <- shuffle' arr 1
+		  return $ elems shuffled
+  where arr = array (1, length nums) $ zip [1..] nums
+
+shuffle' :: Array Int Integer -> Int -> IO (Array Int Integer)
+shuffle' arr start = do
+   newIx <- randomRIO (start, end)
+   let (v1, v2) = (arr ! start, arr ! newIx)
+   -- putStrLn $ "Swapping " ++ (show (start, newIx))
+   let swapped = arr // [(start, v2), (newIx, v1)]
+   if start < (end - 1) then shuffle' swapped (start+1) else return arr
+  where end = snd $ bounds arr
