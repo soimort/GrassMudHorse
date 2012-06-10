@@ -1,0 +1,13 @@
+Name:                wspace
+Version:             0.4
+Description:         Whitespace, a programming language.
+License:             GPL
+License-file:        COPYING
+Author:              Edwin Brady (e.c.brady@durham.ac.uk)
+Maintainer:          harold@hotelling.net
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+
+Executable wspace
+  Main-is:           main.hs
+  Build-Depends:     haskell98, random
