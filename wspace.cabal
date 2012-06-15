@@ -5,6 +5,7 @@ License:             GPL
 License-file:        COPYING
 Author:              Edwin Brady (e.c.brady@durham.ac.uk)
 Maintainer:          harold@hotelling.net
+Homepage:            https://github.com/haroldl/whitespace-nd
 Build-Type:          Simple
 Cabal-Version:       >=1.2
 
