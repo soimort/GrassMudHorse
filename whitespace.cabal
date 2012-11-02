@@ -1,0 +1,18 @@
+Name:                whitespace
+Version:             0.4
+Synopsis:            Whitespace, an esoteric programming language.
+Description:         Whitespace, an esoteric programming language.
+License:             GPL
+License-file:        COPYING
+Author:              Edwin Brady (e.c.brady@durham.ac.uk)
+Maintainer:          harold@hotelling.net
+Homepage:            https://github.com/haroldl/whitespace-nd
+Category:            Compilers/Interpreters
+Build-Type:          Simple
+Cabal-Version:       >=1.2
+Data-Files:          README.md examples/calc.ws examples/count.ws examples/fact.ws examples/hanoi.ws examples/hworld.ws examples/loctest.ws examples/name.ws examples/randperm.ws docs/tutorial.html emacs/whitespace-mode.el
+Extra-Source-Files:  VM.hs Tokens.hs Input.hs
+
+Executable wspace
+  Main-is:           main.hs
+  Build-Depends:     haskell98, random
