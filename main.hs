@@ -1,5 +1,7 @@
 {-
 **********************************************************************
+     GrassMudHorse - A stack-based esoteric programming language, based on
+     
      Whitespace - A language with no visible syntax.
      Copyright (C) 2003 Edwin Brady (e.c.brady@durham.ac.uk)
      
@@ -37,7 +39,7 @@ main = do
 
 usage :: IO ()
 usage = do
-	putStrLn "wspace 0.4 (c) 2003 Edwin Brady"
-	putStrLn "-------------------------------"
-	putStrLn "Usage: wspace [file]"
+	putStrLn "gmh 0.4 - GrassMudHorse Programming Language"
+	putStrLn "--------------------------------------------"
+	putStrLn "Usage: gmh [file]"
 

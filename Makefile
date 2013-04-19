@@ -5,7 +5,7 @@ SRCS = main.hs Input.hs VM.hs Tokens.hs
 OBJS = main.o Input.o VM.o Tokens.o
 OPTS = -O -fvia-C
 
-TARGET = wspace
+TARGET = gmh
 
 $TARGET: ${OBJS}
 	${GHC} ${OPTS} ${OBJS} -o ${TARGET}
