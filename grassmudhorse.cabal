@@ -10,7 +10,7 @@ Homepage:            https://github.com/soimort/GrassMudHorse
 Category:            Compilers/Interpreters
 Build-Type:          Simple
 Cabal-Version:       >=1.2
-Data-Files:          README.md examples/calc.ws examples/count.ws examples/fact.ws examples/hanoi.ws examples/hworld.ws examples/loctest.ws examples/name.ws examples/randperm.ws docs/tutorial.html emacs/whitespace-mode.el
+Data-Files:          README.md examples/calc.ws examples/count.ws examples/fact.ws examples/hanoi.ws examples/hworld.ws examples/loctest.ws examples/name.ws examples/randperm.ws docs/tutorial.html
 Extra-Source-Files:  VM.hs Tokens.hs Input.hs
 
 Executable gmh
