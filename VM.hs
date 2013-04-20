@@ -1,7 +1,7 @@
 module VM where
 
-import Array
-import IO
+import Data.Array
+import System.IO
 import System.Random
 
 {- Stack machine for running whitespace programs -}

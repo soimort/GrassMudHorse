@@ -28,7 +28,7 @@ import Input
 import VM
 import Tokens
 
-import System(getArgs)
+import System.Environment(getArgs)
 
 main :: IO ()
 main = do

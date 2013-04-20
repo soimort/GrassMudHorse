@@ -15,4 +15,4 @@ Extra-Source-Files:  VM.hs Tokens.hs Input.hs
 
 Executable gmh
   Main-is:           main.hs
-  Build-Depends:     haskell98, random
+  Build-Depends:     haskell2010, random
