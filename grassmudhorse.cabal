@@ -20,3 +20,7 @@ Executable gmh
 Executable ws2gmh
   Main-is:           WS2GMH.hs
   Build-Depends:     haskell2010, text
+
+Executable gmh2ws
+  Main-is:           GMH2WS.hs
+  Build-Depends:     haskell2010, text
