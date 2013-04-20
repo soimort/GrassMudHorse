@@ -5,11 +5,37 @@ A stack-based esoteric programming language inspired by Whitespace.
 See [the original web site](http://code.google.com/p/grass-mud-horse/) for full
 documentation of the base language.
 
-## Getting Started
+## Installation
 
     $ git clone git://github.com/soimort/GrassMudHorse.git
     $ cd GrassMudHorse/
     $ cabal install
+
+## Getting Started
+
+Read the tutorial from [here](http://code.google.com/p/grass-mud-horse/wiki/A_Brife_To_GrassMudHorse_Language).
+
+There are some examples (ported from equivalent Whitespace programs) in `examples/` directory.
+
+Hello world in GrassMudHorse:
+
+    $ gmh examples/hworld.gmh
+    Hello, world of Grass-Mud-Horse!
+
+Print a notorious poetry of 99 Grass-Mud-Horses, adapted from [99 Bottles of Beer](http://www.99-bottles-of-beer.net/lyrics.html):
+
+    $ gmh examples/99-grass-mud-horses.gmh
+    99 Grass-Mud-Horses on Male-Gebi,
+    99 Grass-Mud-Horses,
+    River Crab came and ate one Grass-Mud-Horse,
+    98 Grass-Mud-Horses on Male-Gebi.
+    ...
+
+## Other implementations
+
+* Java: <http://code.google.com/p/grass-mud-horse/>
+* JavaScript: <https://github.com/dexteryy/GrassMudMonkey>
+* Erlang: <http://code.google.com/p/grass-mud-horse/wiki/erlang_port>
 
 ## Contributions
 
