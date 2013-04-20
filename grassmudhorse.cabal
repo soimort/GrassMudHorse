@@ -18,9 +18,9 @@ Executable gmh
   Build-Depends:     haskell2010, random
 
 Executable ws2gmh
-  Main-is:           WS2GMH.hs
+  Main-is:           ws2gmh.hs
   Build-Depends:     haskell2010, text
 
 Executable gmh2ws
-  Main-is:           GMH2WS.hs
+  Main-is:           gmh2ws.hs
   Build-Depends:     haskell2010, text
