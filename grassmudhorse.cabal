@@ -16,3 +16,7 @@ Extra-Source-Files:  VM.hs Tokens.hs Input.hs
 Executable gmh
   Main-is:           main.hs
   Build-Depends:     haskell2010, random
+
+Executable ws2gmh
+  Main-is:           WS2GMH.hs
+  Build-Depends:     haskell2010, text
