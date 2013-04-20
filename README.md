@@ -7,13 +7,27 @@ documentation of the base language.
 
 ## Installation
 
+You need [Haskell 2010](http://www.haskell.org/haskellwiki/Haskell_2010) to compile and install this program.
+
     $ git clone git://github.com/soimort/GrassMudHorse.git
     $ cd GrassMudHorse/
     $ cabal install
 
 ## Getting Started
 
-Read the tutorial from [here](http://code.google.com/p/grass-mud-horse/wiki/A_Brife_To_GrassMudHorse_Language).
+On the GrassMudHorse programming language, read the tutorial from [here](http://code.google.com/p/grass-mud-horse/wiki/A_Brife_To_GrassMudHorse_Language).
+
+The GrassMudHorse interpreter: (`gmh`)
+
+    $ gmh [file.gmh]
+
+Whitespace to GrassMudHorse transcompiler: (`ws2gmh`)
+
+    $ ws2gmh <[file.ws] >[file.gmh]
+
+GrassMudHorse to Whitespace transcompiler: (`gmh2ws`)
+
+    $ gmh2ws <[file.gmh] >[file.ws]
 
 There are some examples (ported from equivalent Whitespace programs) in `examples/` directory.
 
