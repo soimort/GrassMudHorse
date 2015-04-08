@@ -1,9 +1,11 @@
+# make is currently broken due to missing reference to random library
+
 GHC = ghc
 GHCI = ghci
 
 SRCS = main.hs Input.hs VM.hs Tokens.hs
 OBJS = main.o Input.o VM.o Tokens.o
-OPTS = -O -fvia-C
+OPTS = -O
 
 TARGET = gmh
 

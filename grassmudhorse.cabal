@@ -1,5 +1,5 @@
 Name:                grassmudhorse
-Version:             0.4
+Version:             0.5
 Synopsis:            GrassMudHorse, an esoteric programming language based on Whitespace.
 Description:         GrassMudHorse, an esoteric programming language based on Whitespace.
 License:             GPL
@@ -15,12 +15,12 @@ Extra-Source-Files:  VM.hs Tokens.hs Input.hs
 
 Executable gmh
   Main-is:           main.hs
-  Build-Depends:     haskell2010, random
+  Build-Depends:     base, array, random
 
 Executable ws2gmh
   Main-is:           ws2gmh.hs
-  Build-Depends:     haskell2010, text
+  Build-Depends:     base, text
 
 Executable gmh2ws
   Main-is:           gmh2ws.hs
-  Build-Depends:     haskell2010, text
+  Build-Depends:     base, text

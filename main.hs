@@ -39,6 +39,6 @@ main = do
 
 usage :: IO ()
 usage = do
-        putStrLn "gmh 0.4 - GrassMudHorse Programming Language"
+        putStrLn "gmh 0.5 - GrassMudHorse Programming Language"
         putStrLn "--------------------------------------------"
         putStrLn "Usage: gmh [file]"
