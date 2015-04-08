@@ -3,4 +3,5 @@
 *~
 *.swp
 dist
+_*
 .emacs*
