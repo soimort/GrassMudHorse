@@ -4,7 +4,7 @@ import VM
 import Tokens
 
 {- Input to the whitespace VM.
-   For convenience, three input characters 
+   For convenience, three input characters
        A => space, B => tab, C => either of CR/LF
 
 Numbers are binary (A=0, B=1, C=terminator)
@@ -59,20 +59,20 @@ execute fname = do
 tokenise :: String -> [Token]
 tokenise [] = []
 tokenise (x:xs) | [x] == show A = A:(tokenise xs)
-		| [x] == show B = B:(tokenise xs)
-		| [x] == show C = C:(tokenise xs)
-		| otherwise = tokenise xs
+                | [x] == show B = B:(tokenise xs)
+                | [x] == show C = C:(tokenise xs)
+                | otherwise = tokenise xs
 
 parse :: [Token] -> Program
 parse [] = []
 parse (A:A:xs) = let (num,rest) = parseNumber xs in
-		  (Push num):(parse rest)
+                  (Push num):(parse rest)
 parse (A:C:A:xs) = Dup:(parse xs)
 parse (A:B:A:xs) = let (num,rest) = parseNumber xs in
-		   (Ref num):(parse rest)
+                   (Ref num):(parse rest)
 parse (A:B:B:A:xs) = Shuffle:(parse xs)
 parse (A:B:C:xs) = let (num,rest) = parseNumber xs in
-		   (Slide num):(parse rest)
+                   (Slide num):(parse rest)
 parse (A:C:B:xs) = Swap:(parse xs)
 parse (A:C:C:xs) = Discard:(parse xs)
 
@@ -86,15 +86,15 @@ parse (B:B:A:xs) = Store:(parse xs)
 parse (B:B:B:xs) = Retrieve:(parse xs)
 
 parse (C:A:A:xs) = let (string,rest) = parseString xs in
-		    (Label string):(parse rest)
+                    (Label string):(parse rest)
 parse (C:A:B:xs) = let (string,rest) = parseString xs in
-		    (Call string):(parse rest)
+                    (Call string):(parse rest)
 parse (C:A:C:xs) = let (string,rest) = parseString xs in
-		    (Jump string):(parse rest)
+                    (Jump string):(parse rest)
 parse (C:B:A:xs) = let (string,rest) = parseString xs in
-		    (If Zero string):(parse rest)
+                    (If Zero string):(parse rest)
 parse (C:B:B:xs) = let (string,rest) = parseString xs in
-		    (If Negative string):(parse rest)
+                    (If Negative string):(parse rest)
 
 parse (C:B:C:xs) = Return:(parse xs)
 parse (C:C:C:xs) = End:(parse xs)
